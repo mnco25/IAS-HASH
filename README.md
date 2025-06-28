@@ -77,7 +77,7 @@ This project provides a comprehensive and secure foundation for user authenticat
 ├── 📄 logout.php         # Session termination and logout handling
 ├── 📄 config.php         # Database configuration and connection
 ├── 🗃️ db.sql            # Database schema and sample data
-├── � README.md          # Project documentation
+├── 📝 README.md          # Project documentation
 ├── 📁 css/               # Stylesheets directory
 │   ├── 📜 common.css     # Global styles and navigation
 │   ├── 📜 dashboard.css  # Dashboard-specific styles
@@ -85,7 +85,7 @@ This project provides a comprehensive and secure foundation for user authenticat
 │   ├── 📜 login.css      # Login page styles
 │   └── 📜 register.css   # Registration page styles
 └── 📁 js/                # JavaScript files directory
-    └── � register.js    # Client-side registration validation
+    └── 📜 register.js    # Client-side registration validation
 ```
 
 ## 👥 User Roles
