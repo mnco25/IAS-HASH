@@ -76,7 +76,7 @@ This project provides a comprehensive and secure foundation for user authenticat
 ├── 📄 dashboard.php      # Protected dashboard with user information
 ├── 📄 logout.php         # Session termination and logout handling
 ├── 📄 config.php         # Database configuration and connection
-├── 🗃️ db.sql            # Database schema and sample data
+├── 🗃️ db.sql             # Database schema and sample data
 ├── 📝 README.md          # Project documentation
 ├── 📁 css/               # Stylesheets directory
 │   ├── 📜 common.css     # Global styles and navigation
