@@ -1,269 +1,112 @@
-# Secure Registration and Login Module with Role-Based Access Control
+<div align="center">
 
-A comprehensive user authentication system built with PHP and MySQL, featuring role-based access control, designed for WAMP environment with modern UI.
+# 🔐 Secure Authentication System with PHP & MySQL
 
-## 🚀 Features
+A robust and modern user authentication system with role-based access control.
 
-- **Secure Registration**: Password hashing using PHP's `password_hash()`
-- **Role-Based Authentication**: Three user roles (Admin, User, Guest) with different access levels
-- **User Authentication**: Secure login with password verification
-- **Session Management**: Protected dashboard with session-based access control
-- **Role-Based Dashboard**: Different content and features based on user role
-- **Admin Panel**: User management interface for administrators
-- **Input Validation**: Comprehensive form validation and error handling
-- **Responsive Design**: Clean, modern UI that works on all devices
-- **WAMP Compatible**: Ready to run on WAMP/XAMPP localhost
+---
+
+</div>
+
+<div align="center">
+
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+
+</div>
+
+## 📖 Project Overview
+
+This project provides a comprehensive and secure foundation for user authentication in web applications. It features a clean, responsive UI and a secure backend built with PHP and MySQL, making it an ideal starting point for projects that require user management with different access levels.
+
+## ✨ Key Features
+
+- 🔐 **Secure Registration & Login**: Industry-standard password hashing with `password_hash()` and `password_verify()`.
+- 👥 **Role-Based Access Control**: Pre-configured Admin, User, and Guest roles with distinct permissions.
+- 🛡️ **Session Management**: Secure session handling to protect routes and user data.
+- ✅ **Input Validation**: Robust server-side validation and `htmlspecialchars()` to prevent XSS attacks.
+- 🔒 **Database Security**: PDO with prepared statements to prevent SQL injection.
+- 📱 **Responsive UI**: A modern and intuitive interface that works on any device.
+- 👁️ **Guest Access**: Allows users to preview the application with limited privileges.
+
+## 🛠️ Technology Stack
+
+| Technology             | Description                                                   |
+| :--------------------- | :------------------------------------------------------------ |
+| **PHP**          | Core backend logic, session management, and password hashing. |
+| **MySQL**        | Database for storing user and application data.               |
+| **HTML5 & CSS3** | For structuring and styling the user interface.               |
+| **JavaScript**   | Client-side interactivity and form validation.                |
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- A local server environment like [Laragon](https://laragon.org/), WAMP, or XAMPP.
+- A web browser.
+- A database management tool (phpMyAdmin, HeidiSQL, etc.).
+
+### Using Laragon (Recommended)
+
+1. **Install Laragon**: Download and install the **Laragon - Full** edition from the [official website](https://laragon.org/download/).
+2. **Start Services**: Launch Laragon and click `Start All`.
+3. **Place Project**: Clone or download this project into Laragon's `www` directory (e.g., `C:\laragon\www`).
+4. **Database Setup**:
+   * Click the `Database` button in Laragon to open HeidiSQL.
+   * Create a new database named `user_auth_system`.
+   * Import the `db.sql` file into the new database.
+5. **Access Application**: Visit `http://hash.test` in your browser.
+
+### Using WAMP/XAMPP
+
+1. **Start Services**: Start your Apache and MySQL services.
+2. **Place Project**: Move the project files to your server's root directory (e.g., `C:\wamp64\www\HASH` or `C:\xampp\htdocs\HASH`).
+3. **Database Setup**:
+   * Open phpMyAdmin (e.g., `http://localhost/phpmyadmin`).
+   * Create a new database named `user_auth_system`.
+   * Import the `db.sql` file.
+4. **Access Application**: Navigate to `http://localhost/HASH/`.
+
+## 📁 Project Structure
+
+```
+/HASH
+├── 📄 index.php
+├── 📄 register.php
+├── 📄 login.php
+├── 📄 dashboard.php
+├── 📄 logout.php
+├── 📄 config.php
+├── 🗃️ db.sql
+├── 📁 js/
+│   └── 📜 register.js
+└── 📄 README.md
+```
 
 ## 👥 User Roles
 
-### 🏆 Admin
-- Full system access
-- User management capabilities
-- System statistics view
-- Administrative tools access
-- Can modify other users' roles
+| Role                | Permissions                                                              |
+| :------------------ | :----------------------------------------------------------------------- |
+| 👑**Admin**   | Full system access and can view all dashboard content.                   |
+| 👤**User**    | Standard access to a personal dashboard and non-administrative features. |
+| 👁️**Guest** | Limited, read-only access to basic dashboard features.                   |
 
-### 👤 User
-- Standard user access
-- Personal dashboard
-- Full feature access
-- Account management
+## 🔐 Security Best Practices
 
-### �️ Guest
-- Limited access
-- Basic dashboard features
-- Restricted functionality
-- Read-only access to most features
-
-## �📁 Project Structure
-
-```
-HASH/
-├── index.php          # Welcome page with navigation
-├── register.php       # User registration form with role selection
-├── login.php          # User login form  
-├── dashboard.php      # Role-based protected user dashboard
-├── admin.php          # Admin panel for user management
-├── logout.php         # Session destruction and logout
-├── config.php         # Database connection configuration
-├── database_setup.sql # SQL script to create database and tables
-└── README.md          # This file
-```
-
-## 🛠️ Setup Instructions
-
-### Prerequisites
-- WAMP/XAMPP installed and running
-- Apache and MySQL services started
-- Web browser
-
-### Database Setup
-
-1. Open phpMyAdmin (usually at `http://localhost/phpmyadmin`)
-2. Run the SQL commands from `database_setup.sql` to create:
-   - Database: `user_auth_system`
-   - Table: `users` with role field (admin, user, guest)
-   - Table: `dashboard_content` for role-based content
-3. The system will automatically create a sample admin user:
-   - Email: `admin@example.com`
-   - Password: `admin123`
-   - Role: Admin
-
-### File Setup
-
-1. Place all project files in your WAMP `www` directory:
-   ```
-   C:\wamp64\www\HASH\
-   ```
-2. Make sure all PHP files are in the same directory
-3. No additional configuration needed - uses default WAMP settings
-
-### Access the Application
-
-1. Start WAMP/XAMPP services
-2. Navigate to `http://localhost/HASH/` in your web browser
-3. Create new accounts or use the sample admin account
-4. Test different user roles and their access levels
-
-## 🛠️ Setup Instructions
-
-### Prerequisites
-
-- WAMP/XAMPP installed and running
-- Apache and MySQL services started
-- Web browser
-
-### Database Setup
-
-1. Open phpMyAdmin (usually at `http://localhost/phpmyadmin`)
-2. Import or run the `database_setup.sql` file
-3. This will create:
-   - Database: `user_auth_system`
-   - Users table with role support
-   - Dashboard content table
-   - Sample admin user
-
-## 🔐 Security Features
-
-### Password Security
-
-- Passwords are hashed using `password_hash()` with default algorithm
-- Password verification using `password_verify()`
-- Minimum password length requirement (6 characters)
-
-### Session Security
-
-- Session-based authentication
-- Role-based access control
-- Automatic session cleanup on logout
-- Protected routes checking user authentication
-
-### Input Validation
-
-- Server-side form validation
-- Email format validation
-- Role validation to prevent privilege escalation
-- XSS protection using `htmlspecialchars()`
-
-## 📋 Usage Guide
-
-### For Regular Users
-
-1. **Register**: Choose your account type (User/Guest)
-2. **Login**: Access your role-specific dashboard
-3. **Dashboard**: View content based on your access level
-
-### For Administrators
-
-1. **Register/Login**: Use admin credentials or register as admin
-2. **Dashboard**: Access full admin dashboard with statistics
-3. **User Management**: Navigate to Admin Panel to manage users
-4. **Role Management**: Change user roles and permissions
-
-## 🎨 User Interface
-
-- **Responsive Design**: Works on desktop, tablet, and mobile
-- **Role Indicators**: Visual badges showing user roles
-- **Modern Styling**: Clean, professional appearance
-- **Intuitive Navigation**: Easy-to-use interface for all user types
+- **Password Hashing**: Passwords are never stored in plaintext.
+- **SQL Injection Prevention**: Database queries are executed with prepared statements.
+- **XSS Prevention**: Output is sanitized with `htmlspecialchars()`.
+- **Secure Sessions**: Sessions are properly managed and destroyed on logout.
+- **Server-Side Validation**: All user-submitted data is validated on the server.
 
 ## 🔧 Customization
 
-### Adding New Roles
+- **Adding Roles**: Update the `ENUM` and `SET` values in the database schema and modify the role validation in `register.php`.
+- **Styling**: All CSS is located within `<style>` tags in each PHP file for easy customization.
 
-1. Update the ENUM values in the database schema
-2. Modify the role validation in `register.php`
-3. Add role-specific content in the dashboard
-4. Update the admin panel role dropdown
+---
 
-### Adding Role-Based Content
+<div align="center">
 
-1. Insert new content into `dashboard_content` table
-2. Specify allowed roles in the `allowed_roles` field
-3. Content will automatically appear for users with proper access
-2. Open your browser and go to: `http://localhost/HASH/`
-3. You'll see the welcome page with options to Login or Register
+*A simple, secure, and scalable authentication system.*
 
-## 🔐 Security Features
-
-### Password Security
-- Passwords are hashed using `password_hash()` with default algorithm
-- Password verification using `password_verify()`
-- Minimum password length requirement (6 characters)
-
-### Session Security
-- Session-based authentication for protected pages
-- Automatic redirect to login if not authenticated
-- Proper session destruction on logout
-
-### Input Validation
-- Server-side validation for all form inputs
-- Email format validation
-- Empty field checking
-- Duplicate email prevention
-- HTML special characters escaping
-
-### Database Security
-- PDO with prepared statements to prevent SQL injection
-- Proper error handling without exposing sensitive information
-
-## 📊 Database Schema
-
-### Users Table
-| Field | Type | Properties |
-|-------|------|------------|
-| id | INT | AUTO_INCREMENT, PRIMARY KEY |
-| name | VARCHAR(100) | NOT NULL |
-| email | VARCHAR(150) | NOT NULL, UNIQUE |
-| password | VARCHAR(255) | NOT NULL (hashed) |
-| created_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP |
-
-## 🎯 Usage Flow
-
-1. **Registration**: New users create account with name, email, password
-2. **Login**: Existing users authenticate with email and password
-3. **Dashboard**: Authenticated users access protected dashboard
-4. **Logout**: Secure session termination and redirect
-
-## 🎨 UI Features
-
-- **Modern Design**: Clean, gradient-based styling
-- **Responsive Layout**: Works on desktop, tablet, and mobile
-- **User-Friendly**: Clear navigation and error messages
-- **Beginner-Friendly**: Simple interface with helpful guidance
-- **Visual Feedback**: Hover effects and form validation messages
-
-## 🔧 Customization
-
-### Styling
-- All CSS is inline for easy customization
-- Gradient colors can be changed in the style sections
-- Font families and sizes easily adjustable
-
-### Validation Rules
-- Password length requirement can be modified in validation sections
-- Additional validation rules can be added as needed
-
-### Database Configuration
-- Update `config.php` if using different database credentials
-- Modify database name if needed
-
-## 🚨 Security Considerations
-
-1. **Production Deployment**:
-   - Change default database credentials
-   - Use HTTPS for secure data transmission
-   - Implement additional security headers
-   - Add CSRF protection for forms
-
-2. **Password Policy**:
-   - Consider stronger password requirements
-   - Implement password strength meter
-   - Add password reset functionality
-
-3. **Session Security**:
-   - Configure secure session settings
-   - Implement session timeout
-   - Add remember me functionality if needed
-
-## 📝 Assignment Requirements Fulfilled
-
-✅ **Registration Page**: Accepts name, email, password with hashing  
-✅ **Login Page**: Authenticates users with password verification  
-✅ **Dashboard Page**: Protected with session-based access control  
-✅ **Logout Page**: Destroys session and redirects to login  
-✅ **Database**: Users table with required fields  
-✅ **Security**: Password hashing, input validation, session management  
-✅ **WAMP Compatible**: Ready for localhost deployment  
-
-## 🎓 Learning Objectives Met
-
-- **Information Assurance**: Secure coding practices implemented
-- **User Authentication**: Complete login/logout system
-- **Password Hashing**: Industry-standard password security
-- **Session Management**: Proper session handling and protection
-- **Web Security**: Input validation and SQL injection prevention
-
-## 🏆 Grade: 50/50 Points
-
-This implementation meets all assignment requirements with additional security features and a professional, beginner-friendly interface perfect for educational purposes.
+</div>
