@@ -70,16 +70,22 @@ This project provides a comprehensive and secure foundation for user authenticat
 
 ```
 /HASH
-├── 📄 index.php
-├── 📄 register.php
-├── 📄 login.php
-├── 📄 dashboard.php
-├── 📄 logout.php
-├── 📄 config.php
-├── 🗃️ db.sql
-├── 📁 js/
-│   └── 📜 register.js
-└── 📄 README.md
+├── 📄 index.php          # Landing page with login/register options
+├── 📄 register.php       # User registration form and processing
+├── 📄 login.php          # User login form and authentication
+├── 📄 dashboard.php      # Protected dashboard with user information
+├── 📄 logout.php         # Session termination and logout handling
+├── 📄 config.php         # Database configuration and connection
+├── 🗃️ db.sql            # Database schema and sample data
+├── � README.md          # Project documentation
+├── 📁 css/               # Stylesheets directory
+│   ├── 📜 common.css     # Global styles and navigation
+│   ├── 📜 dashboard.css  # Dashboard-specific styles
+│   ├── 📜 index.css      # Landing page styles
+│   ├── 📜 login.css      # Login page styles
+│   └── 📜 register.css   # Registration page styles
+└── 📁 js/                # JavaScript files directory
+    └── � register.js    # Client-side registration validation
 ```
 
 ## 👥 User Roles
@@ -101,7 +107,11 @@ This project provides a comprehensive and secure foundation for user authenticat
 ## 🔧 Customization
 
 - **Adding Roles**: Update the `ENUM` and `SET` values in the database schema and modify the role validation in `register.php`.
-- **Styling**: All CSS is located within `<style>` tags in each PHP file for easy customization.
+- **Styling**: CSS files are organized in the `css/` directory:
+  - `common.css` - Global styles, navigation, and shared components
+  - Page-specific CSS files for targeted styling modifications
+  - Responsive design breakpoints for mobile compatibility
+- **JavaScript Enhancement**: Client-side scripts are located in the `js/` directory for easy maintenance and updates.
 
 ---
 
