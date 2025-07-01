@@ -27,6 +27,8 @@ This project provides a comprehensive and secure foundation for user authenticat
 - 🔒 **Database Security**: PDO with prepared statements to prevent SQL injection.
 - 📱 **Responsive UI**: A modern and intuitive interface that works on any device.
 - 👁️ **Guest Access**: Allows users to preview the application with limited privileges.
+- ✏️ **Profile Management**: Complete user profile editing with real-time password validation and AJAX verification.
+- 📚 **Comprehensive Documentation**: Detailed tutorial and setup guides for beginners.
 
 ## 🛠️ Technology Stack
 
@@ -74,17 +76,21 @@ This project provides a comprehensive and secure foundation for user authenticat
 ├── 📄 register.php       # User registration form and processing
 ├── 📄 login.php          # User login form and authentication
 ├── 📄 dashboard.php      # Protected dashboard with user information
+├── 📄 edit_profile.php   # User profile editing with password change
 ├── 📄 logout.php         # Session termination and logout handling
 ├── 📄 config.php         # Database configuration and connection
 ├── 🗃️ db.sql             # Database schema and sample data
 ├── 📝 README.md          # Project documentation
+├── 📚 TUTORIAL.md        # Comprehensive beginner's guide
 ├── 📁 css/               # Stylesheets directory
 │   ├── 📜 common.css     # Global styles and navigation
 │   ├── 📜 dashboard.css  # Dashboard-specific styles
+│   ├── 📜 edit_profile.css # Profile editing page styles
 │   ├── 📜 index.css      # Landing page styles
 │   ├── 📜 login.css      # Login page styles
 │   └── 📜 register.css   # Registration page styles
 └── 📁 js/                # JavaScript files directory
+    ├── 📜 edit_profile.js # Profile editing and password validation
     └── 📜 register.js    # Client-side registration validation
 ```
 
@@ -107,11 +113,20 @@ This project provides a comprehensive and secure foundation for user authenticat
 ## 🔧 Customization
 
 - **Adding Roles**: Update the `ENUM` and `SET` values in the database schema and modify the role validation in `register.php`.
+- **Profile Features**: The `edit_profile.php` system supports:
+  - Real-time password verification via AJAX
+  - Separate forms for profile information and password changes
+  - Role-based restrictions (guests cannot edit profiles)
+  - Email uniqueness validation
 - **Styling**: CSS files are organized in the `css/` directory:
   - `common.css` - Global styles, navigation, and shared components
+  - `edit_profile.css` - Profile editing interface and form styling
   - Page-specific CSS files for targeted styling modifications
   - Responsive design breakpoints for mobile compatibility
-- **JavaScript Enhancement**: Client-side scripts are located in the `js/` directory for easy maintenance and updates.
+- **JavaScript Enhancement**: Client-side scripts are located in the `js/` directory:
+  - `edit_profile.js` - Password validation, AJAX verification, and form interactions
+  - `register.js` - Registration form validation and user feedback
+  - Easy maintenance and updates with modular structure
 
 ---
 
